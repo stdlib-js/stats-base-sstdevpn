@@ -76,32 +76,30 @@ The use of the term `n-1` is commonly referred to as Bessel's correction. Note, 
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-base-sstdevpn
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-sstdevpn = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-sstdevpn@umd/bundle.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-sstdevpn@umd/bundle.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.sstdevpn;
-})();
-</script>
+var sstdevpn = require( '@stdlib/stats-base-sstdevpn' );
 ```
 
 #### sstdevpn( N, correction, x, stride )
@@ -207,16 +205,11 @@ var v = sstdevpn.ndarray( N, 1, x, 2, 1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/bundle.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@umd/bundle.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@umd/bundle.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-sstdevpn@umd/bundle.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var randu = require( '@stdlib/random-base-randu' );
+var round = require( '@stdlib/math-base-special-round' );
+var Float32Array = require( '@stdlib/array-float32' );
+var sstdevpn = require( '@stdlib/stats-base-sstdevpn' );
 
 var x;
 var i;
@@ -229,11 +222,6 @@ console.log( x );
 
 var v = sstdevpn( x.length, 1, x, 1 );
 console.log( v );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -310,8 +298,8 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/stats-base-sstdevpn.svg
 [npm-url]: https://npmjs.org/package/@stdlib/stats-base-sstdevpn
 
-[test-image]: https://github.com/stdlib-js/stats-base-sstdevpn/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/stats-base-sstdevpn/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/stats-base-sstdevpn/actions/workflows/test.yml/badge.svg?branch=v0.0.7
+[test-url]: https://github.com/stdlib-js/stats-base-sstdevpn/actions/workflows/test.yml?query=branch:v0.0.7
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/stats-base-sstdevpn/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/stats-base-sstdevpn?branch=main
@@ -336,12 +324,13 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [deno-url]: https://github.com/stdlib-js/stats-base-sstdevpn/tree/deno
 [umd-url]: https://github.com/stdlib-js/stats-base-sstdevpn/tree/umd
 [esm-url]: https://github.com/stdlib-js/stats-base-sstdevpn/tree/esm
+[branches-url]: https://github.com/stdlib-js/stats-base-sstdevpn/blob/main/branches.md
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/stats-base-sstdevpn/main/LICENSE
 
 [standard-deviation]: https://en.wikipedia.org/wiki/Standard_deviation
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/umd
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
@@ -351,15 +340,15 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/stats/base/dstdevpn]: https://github.com/stdlib-js/stats-base-dstdevpn/tree/umd
+[@stdlib/stats/base/dstdevpn]: https://github.com/stdlib-js/stats-base-dstdevpn
 
-[@stdlib/stats/base/snanstdevpn]: https://github.com/stdlib-js/stats-base-snanstdevpn/tree/umd
+[@stdlib/stats/base/snanstdevpn]: https://github.com/stdlib-js/stats-base-snanstdevpn
 
-[@stdlib/stats/base/sstdev]: https://github.com/stdlib-js/stats-base-sstdev/tree/umd
+[@stdlib/stats/base/sstdev]: https://github.com/stdlib-js/stats-base-sstdev
 
-[@stdlib/stats/base/stdevpn]: https://github.com/stdlib-js/stats-base-stdevpn/tree/umd
+[@stdlib/stats/base/stdevpn]: https://github.com/stdlib-js/stats-base-stdevpn
 
-[@stdlib/stats/base/svariancepn]: https://github.com/stdlib-js/stats-base-svariancepn/tree/umd
+[@stdlib/stats/base/svariancepn]: https://github.com/stdlib-js/stats-base-svariancepn
 
 <!-- </related-links> -->
 
