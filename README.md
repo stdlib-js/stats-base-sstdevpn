@@ -30,10 +30,14 @@ The population [standard deviation][standard-deviation] of a finite size populat
 
 <!-- <equation class="equation" label="eq:population_standard_deviation" align="center" raw="\sigma = \sqrt{\frac{1}{N} \sum_{i=0}^{N-1} (x_i - \mu)^2}" alt="Equation for the population standard deviation."> -->
 
-<div class="equation" align="center" data-raw-text="\sigma = \sqrt{\frac{1}{N} \sum_{i=0}^{N-1} (x_i - \mu)^2}" data-equation="eq:population_standard_deviation">
+```math
+\sigma = \sqrt{\frac{1}{N} \sum_{i=0}^{N-1} (x_i - \mu)^2}
+```
+
+<!-- <div class="equation" align="center" data-raw-text="\sigma = \sqrt{\frac{1}{N} \sum_{i=0}^{N-1} (x_i - \mu)^2}" data-equation="eq:population_standard_deviation">
     <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@c3b591460d7680b7a5301cbae59ddc99f21dc257/lib/node_modules/@stdlib/stats/base/sstdevpn/docs/img/equation_population_standard_deviation.svg" alt="Equation for the population standard deviation.">
     <br>
-</div>
+</div> -->
 
 <!-- </equation> -->
 
@@ -41,10 +45,14 @@ where the population mean is given by
 
 <!-- <equation class="equation" label="eq:population_mean" align="center" raw="\mu = \frac{1}{N} \sum_{i=0}^{N-1} x_i" alt="Equation for the population mean."> -->
 
-<div class="equation" align="center" data-raw-text="\mu = \frac{1}{N} \sum_{i=0}^{N-1} x_i" data-equation="eq:population_mean">
+```math
+\mu = \frac{1}{N} \sum_{i=0}^{N-1} x_i
+```
+
+<!-- <div class="equation" align="center" data-raw-text="\mu = \frac{1}{N} \sum_{i=0}^{N-1} x_i" data-equation="eq:population_mean">
     <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@c3b591460d7680b7a5301cbae59ddc99f21dc257/lib/node_modules/@stdlib/stats/base/sstdevpn/docs/img/equation_population_mean.svg" alt="Equation for the population mean.">
     <br>
-</div>
+</div> -->
 
 <!-- </equation> -->
 
@@ -52,10 +60,14 @@ Often in the analysis of data, the true population [standard deviation][standard
 
 <!-- <equation class="equation" label="eq:corrected_sample_standard_deviation" align="center" raw="s = \sqrt{\frac{1}{n-1} \sum_{i=0}^{n-1} (x_i - \bar{x})^2}" alt="Equation for computing a corrected sample standard deviation."> -->
 
-<div class="equation" align="center" data-raw-text="s = \sqrt{\frac{1}{n-1} \sum_{i=0}^{n-1} (x_i - \bar{x})^2}" data-equation="eq:corrected_sample_standard_deviation">
+```math
+s = \sqrt{\frac{1}{n-1} \sum_{i=0}^{n-1} (x_i - \bar{x})^2}
+```
+
+<!-- <div class="equation" align="center" data-raw-text="s = \sqrt{\frac{1}{n-1} \sum_{i=0}^{n-1} (x_i - \bar{x})^2}" data-equation="eq:corrected_sample_standard_deviation">
     <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@c3b591460d7680b7a5301cbae59ddc99f21dc257/lib/node_modules/@stdlib/stats/base/sstdevpn/docs/img/equation_corrected_sample_standard_deviation.svg" alt="Equation for computing a corrected sample standard deviation.">
     <br>
-</div>
+</div> -->
 
 <!-- </equation> -->
 
@@ -63,10 +75,14 @@ where the sample mean is given by
 
 <!-- <equation class="equation" label="eq:sample_mean" align="center" raw="\bar{x} = \frac{1}{n} \sum_{i=0}^{n-1} x_i" alt="Equation for the sample mean."> -->
 
-<div class="equation" align="center" data-raw-text="\bar{x} = \frac{1}{n} \sum_{i=0}^{n-1} x_i" data-equation="eq:sample_mean">
+```math
+\bar{x} = \frac{1}{n} \sum_{i=0}^{n-1} x_i
+```
+
+<!-- <div class="equation" align="center" data-raw-text="\bar{x} = \frac{1}{n} \sum_{i=0}^{n-1} x_i" data-equation="eq:sample_mean">
     <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@c3b591460d7680b7a5301cbae59ddc99f21dc257/lib/node_modules/@stdlib/stats/base/sstdevpn/docs/img/equation_sample_mean.svg" alt="Equation for the sample mean.">
     <br>
-</div>
+</div> -->
 
 <!-- </equation> -->
 
@@ -76,14 +92,30 @@ The use of the term `n-1` is commonly referred to as Bessel's correction. Note, 
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-base-sstdevpn
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import sstdevpn from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-sstdevpn@esm/index.mjs';
+var sstdevpn = require( '@stdlib/stats-base-sstdevpn' );
 ```
 
 #### sstdevpn( N, correction, x, stride )
@@ -91,7 +123,7 @@ import sstdevpn from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-sstdevpn@
 Computes the [standard deviation][standard-deviation] of a single-precision floating-point strided array `x` using a two-pass algorithm.
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
+var Float32Array = require( '@stdlib/array-float32' );
 
 var x = new Float32Array( [ 1.0, -2.0, 2.0 ] );
 var N = x.length;
@@ -110,8 +142,8 @@ The function has the following parameters:
 The `N` and `stride` parameters determine which elements in `x` are accessed at runtime. For example, to compute the [standard deviation][standard-deviation] of every other element in `x`,
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@esm/index.mjs';
+var Float32Array = require( '@stdlib/array-float32' );
+var floor = require( '@stdlib/math-base-special-floor' );
 
 var x = new Float32Array( [ 1.0, 2.0, 2.0, -7.0, -2.0, 3.0, 4.0, 2.0 ] );
 var N = floor( x.length / 2 );
@@ -125,8 +157,8 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@esm/index.mjs';
+var Float32Array = require( '@stdlib/array-float32' );
+var floor = require( '@stdlib/math-base-special-floor' );
 
 var x0 = new Float32Array( [ 2.0, 1.0, 2.0, -2.0, -2.0, 2.0, 3.0, 4.0 ] );
 var x1 = new Float32Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
@@ -142,7 +174,7 @@ var v = sstdevpn( N, 1, x1, 2 );
 Computes the [standard deviation][standard-deviation] of a single-precision floating-point strided array using a two-pass algorithm and alternative indexing semantics.
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
+var Float32Array = require( '@stdlib/array-float32' );
 
 var x = new Float32Array( [ 1.0, -2.0, 2.0 ] );
 var N = x.length;
@@ -158,8 +190,8 @@ The function has the following additional parameters:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the `offset` parameter supports indexing semantics based on a starting index. For example, to calculate the [standard deviation][standard-deviation] for every other value in `x` starting from the second value
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@esm/index.mjs';
+var Float32Array = require( '@stdlib/array-float32' );
+var floor = require( '@stdlib/math-base-special-floor' );
 
 var x = new Float32Array( [ 2.0, 1.0, 2.0, -2.0, -2.0, 2.0, 3.0, 4.0 ] );
 var N = floor( x.length / 2 );
@@ -189,16 +221,11 @@ var v = sstdevpn.ndarray( N, 1, x, 2, 1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
-import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
-import sstdevpn from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-sstdevpn@esm/index.mjs';
+```javascript
+var randu = require( '@stdlib/random-base-randu' );
+var round = require( '@stdlib/math-base-special-round' );
+var Float32Array = require( '@stdlib/array-float32' );
+var sstdevpn = require( '@stdlib/stats-base-sstdevpn' );
 
 var x;
 var i;
@@ -211,10 +238,6 @@ console.log( x );
 
 var v = sstdevpn( x.length, 1, x, 1 );
 console.log( v );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -261,7 +284,7 @@ console.log( v );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -305,7 +328,7 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 -->
 
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://gitter.im/stdlib-js/stdlib/
+[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -323,7 +346,7 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [standard-deviation]: https://en.wikipedia.org/wiki/Standard_deviation
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/esm
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
@@ -333,15 +356,15 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/stats/base/dstdevpn]: https://github.com/stdlib-js/stats-base-dstdevpn/tree/esm
+[@stdlib/stats/base/dstdevpn]: https://github.com/stdlib-js/stats-base-dstdevpn
 
-[@stdlib/stats/base/snanstdevpn]: https://github.com/stdlib-js/stats-base-snanstdevpn/tree/esm
+[@stdlib/stats/base/snanstdevpn]: https://github.com/stdlib-js/stats-base-snanstdevpn
 
-[@stdlib/stats/base/sstdev]: https://github.com/stdlib-js/stats-base-sstdev/tree/esm
+[@stdlib/stats/base/sstdev]: https://github.com/stdlib-js/stats-base-sstdev
 
-[@stdlib/stats/base/stdevpn]: https://github.com/stdlib-js/stats-base-stdevpn/tree/esm
+[@stdlib/stats/base/stdevpn]: https://github.com/stdlib-js/stats-base-stdevpn
 
-[@stdlib/stats/base/svariancepn]: https://github.com/stdlib-js/stats-base-svariancepn/tree/esm
+[@stdlib/stats/base/svariancepn]: https://github.com/stdlib-js/stats-base-svariancepn
 
 <!-- </related-links> -->
 
