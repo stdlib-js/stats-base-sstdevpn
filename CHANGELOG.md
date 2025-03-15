@@ -4,7 +4,17 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-01-03)
+## Unreleased (2025-03-15)
+
+<section class="features">
+
+### Features
+
+-   [`efe05db`](https://github.com/stdlib-js/stdlib/commit/efe05db7ed658c2b2fbc8bdc462361b876ea47c7) - add C ndarray interface and refactor implementation for `stats/base/sstdevpn` [(#5355)](https://github.com/stdlib-js/stdlib/pull/5355)
+
+</section>
+
+<!-- /.features -->
 
 <section class="commits">
 
@@ -12,6 +22,7 @@
 
 <details>
 
+-   [`efe05db`](https://github.com/stdlib-js/stdlib/commit/efe05db7ed658c2b2fbc8bdc462361b876ea47c7) - **feat:** add C ndarray interface and refactor implementation for `stats/base/sstdevpn` [(#5355)](https://github.com/stdlib-js/stdlib/pull/5355) _(by Prashant Kumar Yadav, Athan Reines, stdlib-bot)_
 -   [`f45a304`](https://github.com/stdlib-js/stdlib/commit/f45a30444f00092d9e2dc54d7859b218dc5fe37e) - **refactor:** update `stats/base/sstdevpn` native addon from C++ to C [(#4509)](https://github.com/stdlib-js/stdlib/pull/4509) _(by Dhruv Arvind Singh)_
 -   [`62364f6`](https://github.com/stdlib-js/stdlib/commit/62364f62ea823a3b52c2ad25660ecd80c71f8f36) - **style:** fix C comment alignment _(by Philipp Burckhardt)_
 -   [`9e689ff`](https://github.com/stdlib-js/stdlib/commit/9e689ffcb7c6223afc521f1e574b42f10921cf5e) - **chore:** fix indentation in manifest.json files _(by Philipp Burckhardt)_
@@ -28,11 +39,12 @@
 
 ### Contributors
 
-A total of 3 people contributed to this release. Thank you to the following contributors:
+A total of 4 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
 -   Dhruv Arvind Singh
 -   Philipp Burckhardt
+-   Prashant Kumar Yadav
 
 </section>
 
